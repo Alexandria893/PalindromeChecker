@@ -25,27 +25,28 @@ public void draw()
 }
 public boolean palindrome(String word)
 {
-//ignores spaces and capitals  
-if(word.equals(reverse(word))) 
-    return true;
-  return false;
-//ignores capitals 
-return word.toLowerCase();
-//counts if symbol is present
-int c = 0;
-  for(int i =0; i<word.length(); i++)
+String r = new String ();
+
+//for the spaces function
+
+  for(int i=0; i<word.length(); i++)
   {
+   
+    if(word.charAt(i)!=' ')
+      r+=word.substring(i,i+1);  
+    
     if(Character.isLetter(word.charAt(i))==true)
     
-      c++; 
+   r+=word.substring(i,i+1);  
    
-  return c;
-  if(c==false)
-    return word;  
-  }
-
+  }  
+//ignores capitals  
+if(r.toLowerCase().equals(reverse(r.toLowerCase()))) 
+    return true;
+  return false;
 
 }
+
 public String reverse(String str)
 {
   String sNew = new String();
