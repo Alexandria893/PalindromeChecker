@@ -25,21 +25,16 @@ public void draw()
 }
 public boolean palindrome(String word)
 {
-String r = new String ();
 
-//for the spaces function
+String r = new String ();
 
   for(int i=0; i<word.length(); i++)
   {
-   
-    if(word.charAt(i)!=' ')
+    //ignore spaces 
+    if(word.charAt(i)!=' ' && Character.isLetter(word.charAt(i))==true)
       r+=word.substring(i,i+1);  
-    
-    if(Character.isLetter(word.charAt(i))==true)
-    
-   r+=word.substring(i,i+1);  
-   
-  }  
+  }
+
 //ignores capitals  
 if(r.toLowerCase().equals(reverse(r.toLowerCase()))) 
     return true;
